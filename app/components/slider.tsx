@@ -10,7 +10,7 @@ export default function AnimatedSlider() {
     let height = 12
     let buffer = 12
     let [ref, bounds] = useMeasure()
-    let progress = useMotionValue(0.5)
+    let progress = useMotionValue(0.3)
     let [hovered, setHovered] = useState(false)
     let [panning, setPanning] = useState(false)
     let width = useTransform(progress, (v) => `${v * 100}%`)
@@ -63,9 +63,7 @@ export default function AnimatedSlider() {
                                     className="relative w-full rounded-full overflow-hidden"
                                 >
                                     <div className="h-full bg-white/20" />
-                                    <motion.div
-                                        style={{ width }}
-                                        className="absolute inset-0 bg-white w-[20%]" />
+                                    <motion.div style={{ width }} className="absolute inset-0 bg-white w-[20%]" />
                                 </motion.div>
                             </motion.div>
 

@@ -1,6 +1,5 @@
-import AnimatedSlider from "./components/slider";
-import AnimatedTabs from "./components/tabs";
-
+import AnimatedTabs from "./components/tabs"
+import AnimatedSlider from "./components/slider"
 
 export default function Home() {
   return (
