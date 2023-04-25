@@ -21,7 +21,7 @@ export default function AnimatedSlider() {
     let state = panning ? "panning" : hovered ? "hovered" : "idle"
 
     useEffect(() => {
-        roundedProgress.onChange((v => setProgressState(v)))
+        roundedProgress.onChange((v) => setProgressState(v))
     }, [roundedProgress])
 
     return (
@@ -46,7 +46,8 @@ export default function AnimatedSlider() {
                                 onPointerLeave={() => setHovered(false)}
                                 onPan={(event, info) => {
                                     let deltaInPercent = info.delta.x / bounds.width
-                                    progress.set(progress.get() + deltaInPercent)
+                                    let newPercent = clamp(progress.get() + deltaInPercent, 0, 1)
+                                    progress.set(newPercent)
                                 }}
                                 onPanEnd={() => setPanning(false)}
                                 style={{ height: height + buffer }}
