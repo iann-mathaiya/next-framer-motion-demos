@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  @apply antialiased bg-slate-800
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
